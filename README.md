@@ -2,7 +2,7 @@
 
 
 
-```markdown
+
 # 📘 Student API Server + Frontend (CRUD App)
 
 A full-stack web application that allows you to manage student records via a RESTful API and a simple HTML+JavaScript frontend. This project was built as part of the **Keploy API Fellowship Session 2**, aimed at demonstrating hands-on skills in building and consuming custom APIs.
