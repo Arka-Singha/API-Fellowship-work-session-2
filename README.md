@@ -291,16 +291,19 @@ GET Method is applied in Postman to read data after deleting data in the databas
 
 
 
+https://github.com/user-attachments/assets/6a89a043-3717-4c14-a0dc-f4639c1a2d59
+
+Frontend is working and taking responce from the user. New data is added and deleted in the video.
+
 ![Screenshot 2025-06-20 133737](https://github.com/user-attachments/assets/5eb6121a-a42d-4dec-9f77-3772d7781256)
-
-
+New data is added and deleted in the website and reflected in the database in MySQL Workbench.
 
 https://github.com/user-attachments/assets/bb6cfa1e-ee9e-4824-b63c-61f13d95d09f
 
-
+Frontend is working and taking responce from the user. Existing data is edited in the video.
 
 ![Screenshot (1583)](https://github.com/user-attachments/assets/2a7c6738-78c7-4392-9ab4-583aa740f73f)
-
+Existing data is updated in the website and reflected in the database in MySQL Workbench.
 
 
 ---
@@ -308,12 +311,6 @@ https://github.com/user-attachments/assets/bb6cfa1e-ee9e-4824-b63c-61f13d95d09f
 ## 🤝 Contribution
 
 Pull requests are welcome. Please fork the repository and raise a PR with your improvements or features.
-
----
-
-## 📄 License
-
-This project is released under the [MIT License](LICENSE).
 
 ---
 
@@ -330,12 +327,3 @@ Built with ❤️ as part of the [Keploy API Fellowship – Session 2](https://k
 
 ---
 
-```
-
-Let me know if you want:
-- A GitHub-ready `README.md` file pushed
-- A LinkedIn post to announce your project
-- Screenshot placeholders replaced with real screenshots
-
-You're all set to submit and share — congratulations! 🎉
-```
