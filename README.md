@@ -263,10 +263,45 @@ npm run dev
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots Optional
 
-> Include screenshots of the frontend and Postman tests here.
 ![Screenshot 2025-06-20 113459](https://github.com/user-attachments/assets/d0d73343-a8a2-493d-8252-0e975fbd4ec2)
+Database and Table is created in MySQL.
+
+![Screenshot 2025-06-20 113549](https://github.com/user-attachments/assets/a0cf675a-4c67-4ff5-9b37-252b61683bfe)
+GET Method is applied in Postman to read data on the empty database to check connections properly.
+
+![Screenshot (1578)](https://github.com/user-attachments/assets/4d99e29e-cba0-4cd9-b7f9-0c70b894291f)
+POST Method is applied in Postman to create new data.
+
+![Screenshot (1577)](https://github.com/user-attachments/assets/181c376a-d780-4311-986c-bd5441d516b0)
+GET Method is applied in Postman to read data after adding data in the database.
+
+![Screenshot (1579)](https://github.com/user-attachments/assets/20daef5b-77bc-4e68-8d3c-5853091dccda)
+PUT Method is applied in Postman to update existing data in the database.
+
+![Screenshot (1580)](https://github.com/user-attachments/assets/3f07acc4-0b81-4d5e-b427-27b2d905cdeb)
+GET Method is applied in Postman to read data after updating data in the database.
+
+![Screenshot (1581)](https://github.com/user-attachments/assets/c0abe274-7b28-4d21-b5ed-31a5ea2e149a)
+DELETE Method is applied in Postman to delete existing data in the database.
+
+![Screenshot (1582)](https://github.com/user-attachments/assets/f25f7c7c-bf63-4583-9f63-b018b57ebf14)
+GET Method is applied in Postman to read data after deleting data in the database.
+
+
+
+![Screenshot 2025-06-20 133737](https://github.com/user-attachments/assets/5eb6121a-a42d-4dec-9f77-3772d7781256)
+
+
+
+https://github.com/user-attachments/assets/bb6cfa1e-ee9e-4824-b63c-61f13d95d09f
+
+
+
+![Screenshot (1583)](https://github.com/user-attachments/assets/2a7c6738-78c7-4392-9ab4-583aa740f73f)
+
+
 
 ---
 
