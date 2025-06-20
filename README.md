@@ -263,7 +263,7 @@ npm run dev
 
 ---
 
-## 📸 Screenshots Optional
+## 📸 Screenshots
 
 ![Screenshot 2025-06-20 113459](https://github.com/user-attachments/assets/d0d73343-a8a2-493d-8252-0e975fbd4ec2)
 Database and Table is created in MySQL.
