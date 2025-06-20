@@ -1,8 +1,6 @@
 # API-Fellowship-work-session-2
 
-Sure! Here's a **clean, well-structured, and de-duplicated version** of your documentation, ready to be added to your `README.md` file. All repeated and overlapping sections have been merged while keeping the most detailed and polished explanations.
 
----
 
 ```markdown
 # 📘 Student API Server + Frontend (CRUD App)
