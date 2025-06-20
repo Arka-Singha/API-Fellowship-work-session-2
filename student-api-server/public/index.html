@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student API Frontend</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    input { margin: 5px; padding: 5px; }
+    button { padding: 5px 10px; }
+    .student { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Student Records</h1>
+
+  <h3>Add New Student</h3>
+  <input type="text" id="name" placeholder="Name" />
+  <input type="email" id="email" placeholder="Email" />
+  <input type="text" id="course" placeholder="Course" />
+  <button onclick="addStudent()">Add Student</button>
+
+  <h3>All Students</h3>
+  <div id="students"></div>
+
+<script>
+  const api = "http://localhost:3000/api/students";
+
+  let editingId = null;
+
+  async function fetchStudents() {
+    const res = await fetch(api);
+    const students = await res.json();
+
+    document.getElementById("students").innerHTML = students.map(s => {
+      if (editingId === s.id) {
+        return `
+          <div class="student">
+            <input type="text" id="edit-name-${s.id}" value="${s.name}" />
+            <input type="email" id="edit-email-${s.id}" value="${s.email}" />
+            <input type="text" id="edit-course-${s.id}" value="${s.course}" />
+            <button onclick="saveStudent(${s.id})">Save</button>
+            <button onclick="cancelEdit()">Cancel</button>
+          </div>
+        `;
+      } else {
+        return `
+          <div class="student">
+            <b>${s.name}</b> (${s.email}) - ${s.course}
+            <button onclick="editStudent(${s.id})">Edit</button>
+            <button onclick="deleteStudent(${s.id})">Delete</button>
+          </div>
+        `;
+      }
+    }).join('');
+  }
+
+  async function addStudent() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const course = document.getElementById("course").value;
+
+    await fetch(api, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, course })
+    });
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("course").value = "";
+
+    fetchStudents();
+  }
+
+  function editStudent(id) {
+    editingId = id;
+    fetchStudents();
+  }
+
+  function cancelEdit() {
+    editingId = null;
+    fetchStudents();
+  }
+
+  async function saveStudent(id) {
+    const name = document.getElementById(`edit-name-${id}`).value;
+    const email = document.getElementById(`edit-email-${id}`).value;
+    const course = document.getElementById(`edit-course-${id}`).value;
+
+    await fetch(`${api}/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, course })
+    });
+
+    editingId = null;
+    fetchStudents();
+  }
+
+  async function deleteStudent(id) {
+    await fetch(`${api}/${id}`, { method: "DELETE" });
+    fetchStudents();
+  }
+
+  fetchStudents();
+</script>
+
+
+</body>
+</html>
