@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1750657035122" clover="3.2.0">
+  <project timestamp="1750657035122" name="All files">
+    <metrics statements="59" coveredstatements="52" conditionals="9" coveredconditionals="6" methods="7" coveredmethods="6" elements="75" coveredelements="64" complexity="0" loc="59" ncloc="59" packages="3" files="4" classes="4"/>
+    <package name="student-api-server">
+      <metrics statements="19" coveredstatements="17" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="0"/>
+      <file name="db.js" path="C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\db.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+      </file>
+      <file name="server.js" path="C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\server.js">
+        <metrics statements="14" coveredstatements="12" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="student-api-server.controllers">
+      <metrics statements="31" coveredstatements="26" conditionals="5" coveredconditionals="4" methods="6" coveredmethods="6"/>
+      <file name="studentController.js" path="C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\controllers\studentController.js">
+        <metrics statements="31" coveredstatements="26" conditionals="5" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="48" count="3" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="57" count="3" type="stmt"/>
+        <line num="58" count="5" type="cond" truecount="3" falsecount="0"/>
+      </file>
+    </package>
+    <package name="student-api-server.routes">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="studentRoutes.js" path="C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\routes\studentRoutes.js">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

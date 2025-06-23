@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "jest": "^30.0.2",
+    "supertest": "^7.1.1"
+  }
+}
