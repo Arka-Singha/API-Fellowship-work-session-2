@@ -150,6 +150,15 @@ run npm install `--save-dev jest supertest` to installs all project dependencies
 
 &#x20; &#x20;
 
+<img width="380" alt="Unit_testing_output" src="https://github.com/user-attachments/assets/5c85eec7-65cc-42d7-a2a7-8257c8994e29" />
+Unit testing Passed
+
+<img width="410" alt="Screenshotafterunittestingandintegrationtesting" src="https://github.com/user-attachments/assets/3aa6af09-78e0-46ce-90df-7ccc81c826d9" />
+Unit testing and Integration Testing passed
+
+<img width="770" alt="all3testing-unit-integration-api-output" src="https://github.com/user-attachments/assets/32a567f2-edfd-4958-b66e-0c8706e39700" />
+All three tests: Unit Testing, Integration Testing and API testing passed.
+
 ---
 
 ## 🤝 Contribution
