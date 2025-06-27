@@ -8,3 +8,25 @@
 [33m[nodemon] watching extensions: js,mjs,cjs,json[39m
 [32m[nodemon] starting `node server.js`[39m
 Server running on port 3000
+SyntaxError: Expected ',' or '}' after property value in JSON at position 80 (line 1 column 81)
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\body-parser\lib\types\json.js:77:19)
+    at C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\body-parser\lib\read.js:123:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+SyntaxError: Expected double-quoted property name in JSON at position 51 (line 1 column 52)
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\body-parser\lib\types\json.js:77:19)
+    at C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\body-parser\lib\read.js:123:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\API-Fellowship-work-session-2\student-api-server\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)

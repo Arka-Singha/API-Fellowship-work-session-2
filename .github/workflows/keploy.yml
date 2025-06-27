@@ -45,3 +45,6 @@ jobs:
         run: |
           curl --silent --location https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64 -o keploy
           chmod +x keploy
+
+      - name: Run Keploy Tests
+        run: ./keploy test -c "curl http://localhost:3000/api/students" -u http://localhost:3000 -o openapi.yaml
