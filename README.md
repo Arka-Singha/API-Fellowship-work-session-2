@@ -197,7 +197,7 @@ All test cases include request body, headers, expected status codes, and asserti
 ![Screenshot (1597)](https://github.com/user-attachments/assets/bb696fd1-3cf0-4ae6-926b-cebd1b7bc296)
 ![Screenshot (1598)](https://github.com/user-attachments/assets/0b1a76fa-125e-4dd0-aeba-0aab3b8380a4)
 
-## 📸 Screenshots of AI Test In GitHUB (Keploy Dashboard)
+## 📸 Screenshots of AI Test In GitHUB
 ![Screenshot (1605)](https://github.com/user-attachments/assets/b12f4072-714b-403a-ace1-aca02b6c1021)
 ![Screenshot (1606)](https://github.com/user-attachments/assets/fece5cd0-0bd1-4685-ae42-b5c60dc8e0e2)
 ![Screenshot (1607)](https://github.com/user-attachments/assets/f8d49ba6-4061-4f37-bdfe-11c37ff588ec)
