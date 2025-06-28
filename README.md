@@ -1,182 +1,243 @@
-As this `Readme.md` file is about session 3 which is built on session-2, you can go to `student-api-server` to get the `Readme.md` of session 2 to get better clarity and information about this project.
+# 🤖 AI-Powered API Testing with Keploy – Project Report
 
+## 📝 Project Title: **Studify – Full Stack Student Management API with Automated Testing**
 
-# API-Fellowship-work-session-3 
+## 🔍 Overview
 
-# 📘 Student API Server + Frontend (CRUD App) + Automated Testing
+Studify is a full-stack student management application built using Node.js, Express.js, MySQL, and HTML/JavaScript for the frontend. It supports complete CRUD operations through a custom RESTful API and features Postman-tested endpoints and automated testing using Jest and Supertest.
 
-A full-stack web application that allows you to manage student records via a RESTful API and a simple HTML+JavaScript frontend. This project was built as part of the **Keploy API Fellowship Session 2**, aimed at demonstrating hands-on skills in building, consuming, and testing custom APIs.
-
----
-
-## 🚀 Project Overview
-
-This app allows users to:
-
-- Add new students
-- View all students
-- Update student details
-- Delete student entries
-- Test the API logic, DB connectivity, and full endpoint behavior using automated test suites
-
-The backend is built using **Node.js + Express** with a **MySQL** database, and the frontend is a lightweight HTML interface using **JavaScript (Fetch API)**. Automated testing uses **Jest** and **Supertest**.
+As part of Session 4 of the **Keploy API Fellowship**, the project was extended to integrate **AI-Powered API Testing** using **Keploy**, and automated through CI/CD principles using `ngrok` and `OpenAPI` schema specifications.
 
 ---
 
-## 🔧 Features & Functionalities
+## ⚙️ Technologies Used
 
-| Feature            | Description                                                   |
-| ------------------ | ------------------------------------------------------------- |
-| 🧹 RESTful API     | Provides endpoints to perform CRUD operations on student data |
-| 🗃️ MySQL DB       | Stores student records persistently                           |
-| 🖥️ Frontend UI    | Simple HTML+JS interface to add/view/edit/delete students     |
-| 🛏️ API Testing    | All endpoints tested using Postman and Jest                   |
-| 🔒 Secure Config   | Environment variables managed securely with `.env` file       |
-| 🌀 Test Automation | Unit, integration, and API tests with coverage reports        |
-
----
-
-## 🛠️ Tech Stack Breakdown
-
-| Tool / Library         | Purpose                                  |
-| ---------------------- | ---------------------------------------- |
-| **Node.js**            | JavaScript runtime for backend           |
-| **Express.js**         | Web framework to define routes           |
-| **MySQL**              | Relational DB for storing student data   |
-| **dotenv**             | Manage environment variables             |
-| **Postman**            | Manual API testing                       |
-| **HTML + CSS**         | Frontend structure and design            |
-| **JavaScript (Fetch)** | API calls from frontend                  |
-| **MySQL Workbench**    | GUI to manage database                   |
-| **Jest**               | Unit and integration test framework      |
-| **Supertest**          | HTTP assertions for API endpoint testing |
+| Tool / Technology     | Purpose                                                  |
+| --------------------- | -------------------------------------------------------- |
+| **Node.js**           | Server-side runtime environment                          |
+| **Express.js**        | Backend web framework for creating REST APIs             |
+| **MySQL**             | Relational database for storing student records          |
+| **dotenv**            | Manage configuration with `.env`                         |
+| **HTML + JS + CSS**   | Lightweight frontend                                     |
+| **Fetch API**         | Send client requests to the backend                      |
+| **Postman**           | Manual API testing tool                                  |
+| **Jest**              | JavaScript test framework for unit and integration tests |
+| **Supertest**         | API testing library for HTTP assertions                  |
+| **Swagger (OpenAPI)** | API documentation and schema definition                  |
+| **Keploy**            | AI-powered test suite generator for APIs                 |
+| **ngrok**             | Expose local server to public internet via secure tunnel |
+| **GitHub Actions**    | CI/CD workflow automation tool                           |
 
 ---
 
-## 📂 Project Structure
+## 🏠 Project Structure
 
 ```
 student-api-server/
-├── controllers/
-│   └── studentController.js    # Logic for each API endpoint
-├── routes/
-│   └── studentRoutes.js        # Route definitions
-├── public/
-│   └── index.html              # Frontend interface
+├── public/                      # Frontend files
+├── controllers/                 # API endpoint logic
+├── routes/                      # Route definitions
 ├── tests/
-│   ├── unit/                   # Unit tests
-│   ├── integration/            # DB integration tests
-│   └── api/                    # Full API endpoint tests
-├── db.js                       # MySQL DB connection
-├── server.js                   # Express app setup
-├── .env                        # Environment config
-└── README.md
+│   ├── unit/                    # Unit tests
+│   │   └── studentController.test.js
+│   ├── integration/             # DB interaction tests
+│   │   └── dblntegration.test.js
+│   └── api/                     # API endpoint tests
+│       └── studentApi.test.js
+├── .github/
+│   └── workflows/
+│       └── keploy.yml           # GitHub Actions config for Keploy
+├── swagger.js                   # Swagger configuration
+├── openapi.yaml                # OpenAPI schema
+├── db.js                        # MySQL DB connection
+├── server.js                    # Express server setup
+├── .env                         # Environment variables
+├── README.md                    # Main readme file
+└── student_api_readme.md        # Additional readme
 ```
 
 ---
 
-## 🧪 Testing Implementation (New Tasks)
+## 📁 Keploy CI/CD Integration
 
-As part of **Session 3 of the Keploy API Fellowship**, we added automated testing:
+The project was configured to use **GitHub Actions** for running Keploy test suites in a CI/CD pipeline. Below is a sample configuration:
 
-### ✅ Unit Tests
+### .github/workflows/keploy.yml
 
-- Tested controller logic with and without mocking DB.
-- Ensured functions handle valid input and edge cases.
-- Example: student creation without DB involvement.
+```yaml
+name: Keploy API Tests
 
-### ⚖️ Integration Tests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-- Verified DB interaction (INSERT, UPDATE, DELETE).
-- Ensured real DB reflects changes after API calls.
+jobs:
+  keploy-tests:
+    runs-on: ubuntu-latest
 
-### 🔐 API Tests
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: keploy_students
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent" 
+          --health-interval=10s 
+          --health-timeout=5s 
+          --health-retries=5
 
-- Tested endpoint behavior using `Supertest`.
-- Verified full response correctness and error handling.
-- Used `beforeAll`/`afterAll` hooks with `async/await`.
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-### ⌚ Coverage Report (Final Output)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-- All tests passed.
-- 88%+ statement coverage achieved across all modules.
+      - name: Install Dependencies
+        run: npm install
 
+      - name: Start App
+        run: |
+          nohup npm run dev &
+          sleep 10
 
+      - name: Download Keploy
+        run: |
+          curl --silent --location https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64 -o keploy
+          chmod +x keploy
+
+      - name: Run Keploy Tests
+        run: ./keploy test -c "curl http://localhost:3000/api/students" -u http://localhost:3000 -o openapi.yaml
+```
 
 ---
 
-## 🔬 How to Run the Tests
+## 📆 Test Suite Status
+
+Once the workflow executes successfully, it runs full lifecycle API tests and generates a test report through Keploy in the CI environment.
+
+You can view this in GitHub Actions under the "Actions" tab.
+
+---
+
+## 🌍 Base URL for Testing
+
+Using `ngrok`, the project was hosted at:
+
+```
+https://185e-2405-201-682d-a06a-5885-4435-453b-55d4.ngrok-free.app
+```
+
+This made it possible for Keploy’s AI to access and generate tests using real-time cURL requests and OpenAPI specs.
+
+---
+
+## 🧲 Keploy AI Testing Process
+
+### ✅ Tools Required:
+
+- **Keploy Dashboard** ([https://app.keploy.io/api-testing/generate](https://app.keploy.io/api-testing/generate))
+- **Swagger/OpenAPI YAML file**
+- **5+ working curl commands**
+
+### ✅ Test Generation Steps:
+
+1. Set the base API URL to ngrok’s public endpoint
+2. Pasted OpenAPI schema (see: `openapi.yaml`)
+3. Pasted working curl commands (tested via Postman)
+4. Clicked **"Generate API Tests"** in Keploy
+
+Keploy's AI successfully analyzed endpoints and responses and created multiple test cases and assertions.
+
+---
+
+## 🔍 Sample cURL Commands Used
 
 ```bash
-# Install dependencies
-npm install
+curl --location 'https://185e-2405-...ngrok-free.app/api/students' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "Test User", "email": "test@example.com", "course": "API"}'
 
-# Run all tests with coverage
-npm test
+curl --location 'https://185e-2405-...ngrok-free.app/api/students'
+curl --location 'https://185e-2405-...ngrok-free.app/api/students/1'
+curl --location --request PUT 'https://185e-2405-...ngrok-free.app/api/students/1' \
+--data-raw '{"name": "Updated", "email": "new@example.com", "course": "ML"}'
+curl --location --request DELETE 'https://185e-2405-...ngrok-free.app/api/students/1'
 ```
 
 ---
 
-## 📐 CRUD API Documentation
+## 📦 Generated Test Cases by Keploy
 
-> Base URL: `http://localhost:3000/api/students`
+Keploy automatically created the following test scenarios:
 
-It reamains same as the earlier task (Keploy Session 2).
+- ✅ `Create Student`
+- ✅ `Get Student By ID`
+- ✅ `Update Student By ID`
+- ✅ `Delete Student And Verify`
+- ✅ `Full_Lifecycle_Test`
+- ✅ `Read Student`
+- ✅ `Update Only Student Name`
 
-| CRUD Action | HTTP Method | Example Endpoint    | Use                            |
-| ----------- | ----------- | ------------------- | ------------------------------ |
-| Create      | POST        | `/api/students`     | Add a new student              |
-| Read        | GET         | `/api/students`     | Get all students               |
-| Read        | GET         | `/api/students/:id` | Get a single student by ID     |
-| Update      | PUT         | `/api/students/:id` | Update an existing student     |
-| Delete      | DELETE      | `/api/students/:id` | Remove a student from the list |
----
-
-## 🌐 Frontend Usage
-
-It reamains same as the earlier task (Keploy Session 2).
+All test cases include request body, headers, expected status codes, and assertion checks.
 
 ---
 
-## 💪 Installation & Setup
+## 📸 Screenshot of AI Test Suite (Keploy Dashboard)
 
-It reamains same as the earlier task (Keploy Session 2).
+> Save this image in your project under `./assets/keploy-test-suite.png`
 
-run npm install `--save-dev jest supertest` to installs all project dependencies, including Jest and Supertest for testing.
+```markdown
 
----
-
-## 📸 Testing Screenshots
-
-&#x20; &#x20;
-
-<img width="380" alt="Unit_testing_output" src="https://github.com/user-attachments/assets/5c85eec7-65cc-42d7-a2a7-8257c8994e29" />
-Unit testing Passed
-
-<img width="410" alt="Screenshotafterunittestingandintegrationtesting" src="https://github.com/user-attachments/assets/3aa6af09-78e0-46ce-90df-7ccc81c826d9" />
-Unit testing and Integration Testing passed
-
-<img width="770" alt="all3testing-unit-integration-api-output" src="https://github.com/user-attachments/assets/32a567f2-edfd-4958-b66e-0c8706e39700" />
-All three tests: Unit Testing, Integration Testing and API testing passed.
+```
 
 ---
 
-## 🤝 Contribution
+## 📅 Task 2: Keploy Chrome Extension Testing
 
-Pull requests are welcome. Please fork the repo and create a PR with your improvements.
+The Keploy Chrome Extension was successfully used to generate tests by recording API calls from a live instance of the frontend hosted via ngrok.
+
+### ✅ Steps Followed:
+1. Loaded `index.html` using `ngrok` public URL (e.g. `https://6d99-...ngrok-free.app`)
+2. Opened the Keploy Chrome Extension and clicked **"Start Recording"**
+3. Performed all CRUD operations:
+   - Create new student
+   - Fetch all students
+   - Edit student
+   - Delete student
+4. Stopped recording and clicked **"Generate Tests"**
+5. Tests were successfully generated using the browser extension and visible in Keploy dashboard
+
+### 📸 Screenshot of Chrome Extension Results
+
+> Save screenshot under `./assets/keploy-chrome-extension-tests.png`
+
+```markdown
+![Keploy Chrome Extension Test Report](./assets/keploy-chrome-extension-tests.png)
+```
 
 ---
 
-## 🙌 Acknowledgement
+## 📝 Conclusion
 
-Built with ❤️ as part of the [Keploy API Fellowship – Session 2 & 3](https://keploy.io/fellowship)
+This phase of the project demonstrated how AI can simplify test generation by analyzing API structure and usage patterns. Keploy provided an effortless and intelligent way to boost test coverage, ensure reliability, and enable API-first development workflows.
+
+Combined with manual and automated testing (Jest + Supertest), the Keploy-powered pipeline makes the project production-ready and test-driven.
+
+CI/CD integration using GitHub Actions ensures automated execution and consistent verification of API tests for every update to the codebase.
 
 ---
 
 ## 👨‍💻 Author
 
 **Arka Singha**\
-[GitHub](https://github.com/yourusername) | [LinkedIn](https://linkedin.com/in/yourlinkedin)
-
----
+GitHub: Arka-Singha\
+LinkedIn: [www.linkedin.com/in/arka-singha-99413225b](http://www.linkedin.com/in/arka-singha-99413225b)
 
