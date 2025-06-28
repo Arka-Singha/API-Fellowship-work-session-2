@@ -190,13 +190,18 @@ All test cases include request body, headers, expected status codes, and asserti
 
 ---
 
-## 📸 Screenshot of AI Test Suite (Keploy Dashboard)
+## 📸 Screenshots of AI Test Suite (Keploy Dashboard)
+![Screenshot (1595)](https://github.com/user-attachments/assets/d8cb7d5c-5d8c-45e3-b6c4-fb25803995a9)
+![Screenshot (1599)](https://github.com/user-attachments/assets/9d82b059-bde6-44a9-8a03-01973505ee44)
+![Screenshot (1596)](https://github.com/user-attachments/assets/48e5b196-2edf-4361-b343-027a9dd1a535)
+![Screenshot (1597)](https://github.com/user-attachments/assets/bb696fd1-3cf0-4ae6-926b-cebd1b7bc296)
+![Screenshot (1598)](https://github.com/user-attachments/assets/0b1a76fa-125e-4dd0-aeba-0aab3b8380a4)
 
-> Save this image in your project under `./assets/keploy-test-suite.png`
+## 📸 Screenshots of AI Test In GitHUB (Keploy Dashboard)
+![Screenshot (1605)](https://github.com/user-attachments/assets/b12f4072-714b-403a-ace1-aca02b6c1021)
+![Screenshot (1606)](https://github.com/user-attachments/assets/fece5cd0-0bd1-4685-ae42-b5c60dc8e0e2)
+![Screenshot (1607)](https://github.com/user-attachments/assets/f8d49ba6-4061-4f37-bdfe-11c37ff588ec)
 
-```markdown
-
-```
 
 ---
 
@@ -205,6 +210,7 @@ All test cases include request body, headers, expected status codes, and asserti
 The Keploy Chrome Extension was successfully used to generate tests by recording API calls from a live instance of the frontend hosted via ngrok.
 
 ### ✅ Steps Followed:
+
 1. Loaded `index.html` using `ngrok` public URL (e.g. `https://6d99-...ngrok-free.app`)
 2. Opened the Keploy Chrome Extension and clicked **"Start Recording"**
 3. Performed all CRUD operations:
@@ -217,11 +223,15 @@ The Keploy Chrome Extension was successfully used to generate tests by recording
 
 ### 📸 Screenshot of Chrome Extension Results
 
-> Save screenshot under `./assets/keploy-chrome-extension-tests.png`
+After Recording
+![Screenshot (1610)](https://github.com/user-attachments/assets/e6ff753c-bf8c-4c6b-9156-22b8b540b858)
 
-```markdown
-![Keploy Chrome Extension Test Report](./assets/keploy-chrome-extension-tests.png)
-```
+After clicking"Generate Tests"
+
+![Screenshot (1611)](https://github.com/user-attachments/assets/c8b0dfd9-ddf5-4800-8ca5-8a04e25af700)
+![Screenshot (1612)](https://github.com/user-attachments/assets/2a500a67-fd9d-4eb0-a755-23436b4ad959)
+![Screenshot (1613)](https://github.com/user-attachments/assets/464f25fa-13e1-4128-bb29-9f0bf67ceddc)
+![Screenshot (1614)](https://github.com/user-attachments/assets/b7cf84e3-92b7-473e-a504-a54612f0f075)
 
 ---
 
