@@ -173,6 +173,120 @@ curl --location --request DELETE 'https://185e-2405-...ngrok-free.app/api/studen
 ```
 
 ---
+## 🔍 Swagger OPENAPI SCHEMA
+
+```bash
+openapi: 3.0.0
+info:
+  title: Student API
+  version: 1.0.0
+  description: API for managing student records
+
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+
+paths:
+  /api/students:
+    get:
+      summary: Get all students
+      responses:
+        '200':
+          description: A list of students
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+    post:
+      summary: Add a new student
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '201':
+          description: Student created successfully
+
+  /api/students/{id}:
+    get:
+      summary: Get a student by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Student found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        '404':
+          description: Student not found
+
+    put:
+      summary: Update student by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '200':
+          description: Student updated successfully
+
+    delete:
+      summary: Delete student by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Student deleted successfully
+        '404':
+          description: Student not found
+
+components:
+  schemas:
+    Student:
+      type: object
+      required:
+        - name
+        - email
+        - course
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Arka Singha
+        email:
+          type: string
+          example: arka@example.com
+        course:
+          type: string
+          example: Backend Development
+
+```
+
+---
 
 ## 📦 Generated Test Cases by Keploy
 
